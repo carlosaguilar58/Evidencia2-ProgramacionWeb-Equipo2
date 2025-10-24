@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Ejercicios Dinámicos en JavaScript</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="bg-primary text-white p-3 mb-4">
+        <div class="container">
+            <h1 class="display-4">Portafolio de Ejercicios Dinámicos en JavaScript</h1>
+            <p class="lead">FASE 2. Fundamentos de Desarrollo Web: Contenido Dinámico en el Cliente</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="introduccion" class="mb-5 p-4 bg-light rounded shadow-sm">
+            <h2 class="text-secondary mb-4">Introducción a JavaScript (JS)</h2>
+            <p>
+                <strong>JavaScript (JS)</strong> es un lenguaje de programación de scripts que, junto con HTML (estructura) y CSS
+                (estilo), es uno de los tres pilares fundamentales del desarrollo web moderno. Su principal función es
+                inyectar <strong>comportamiento dinámico</strong> e interactividad en el lado del cliente (el navegador), haciendo que las
+                páginas estáticas cobren vida sin necesidad de recargar la página.
+            </p>
+
+            <div class="ratio ratio-16x9 mb-4">
+                <iframe 
+                    src="https://www.youtube.com/embed/yn8nQjocX2g?si=wCtkpHGMGuCv4JtI"
+                    title="Introducción a JavaScript" 
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                    class="rounded shadow">
+                </iframe>
+            </div>
+
+            <hr>
+
+            <div class="text-center my-4">
+                <img src="assets/img/logos.png" 
+                     class="img-fluid rounded shadow-sm" 
+                     style="max-height: 110px;" 
+                     alt="Logos de HTML5, CSS3 y JavaScript">
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h3 class="h5 text-success">Características Importantes</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light"><strong>Lenguaje Interpretado:</strong> Se ejecuta directamente por el
+                            navegador sin un paso de compilación previo.</li>
+                        <li class="list-group-item bg-light"><strong>Case-sensitive:</strong> Distingue entre mayúsculas y
+                            minúsculas (ej. `variable` y `Variable` son distintas).</li>
+                        <li class="list-group-item bg-light"><strong>Débilmente Tipado:</strong> El tipo de una variable (string, number, etc.) es dinámico y puede cambiar en ejecución.</li>
+                        <li class="list-group-item bg-light"><strong>Orientado a Objetos (Prototipos):</strong> Utiliza objetos y herencia basada en prototipos para reutilizar código y métodos.</li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 mb-4">
+                    <h3 class="h5 text-success">Elementos Fundamentales</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-light"><strong>Tipos de Datos:</strong> Primitivos (`String`, `Number`,
+                            `Boolean`, `BigInt`) y tipos de referencia (`Object`, `Array`).</li>
+                        <li class="list-group-item bg-light"><strong>Estructuras de Control:</strong> Sentencias condicionales
+                            (`if...else`, `switch`) y bucles (`for`, `while`) para controlar el flujo de ejecución.</li>
+                        <li class="list-group-item bg-light"><strong>Funciones:</strong> Bloques de código reutilizables (nombradas o anónimas) que pueden aceptar parámetros y retornar valores.</li>
+                        <li class="list-group-item bg-light"><strong>Ámbito (Scope):</strong> Define la accesibilidad de variables, pudiendo ser global, de función o de bloque (con `let` y `const`).</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-4 p-3 border-top">
+                <h3 class="h5 text-primary">📜 Historia y Estándares (ECMAScript)</h3>
+                <p>
+                    JavaScript fue creado en 1995 por <strong>Brendan Eich</strong> en Netscape. Para estandarizar el lenguaje y asegurar su interoperabilidad entre navegadores, fue remitido a <strong>ECMA International</strong>, dando lugar al estándar <strong>ECMAScript (ES)</strong>. 
+                </p>
+                <p>
+                    El estándar más influyente es <strong>ES6 (o ES2015)</strong>, que revolucionó el lenguaje con características como las <strong>promesas</strong>, las <strong>clases</strong>, y las declaraciones de variables `let` y `const`. El lenguaje evoluciona anualmente con nuevas versiones que añaden mejoras y sintaxis moderna.
+                </p>
+            </div>
+
+            <div class="mt-4 p-3 border-top">
+                <h3 class="h5 text-primary">⚙️ Concepto Clave: El DOM (Document Object Model)</h3>
+                <p>
+                    El <strong>DOM</strong> es la interfaz de programación esencial que permite a JavaScript comunicarse y manipular la estructura (HTML) y el estilo (CSS) de una página. El navegador crea una representación jerárquica de la página (un "árbol de nodos") que JS puede modificar a través de métodos y propiedades específicas.
+                </p>
+
+                <div class="text-center my-3 p-3 bg-white border rounded">
+                    <img src="assets/img/diagramadom.png" 
+                         class="img-fluid" 
+                         style="max-width: 450px;" 
+                         alt="Diagrama de Árbol del DOM">
+                </div>
+
+                <p>
+                    El DOM permite a JavaScript realizar la magia de la interactividad, como:
+                </p>
+                <ul class="list-group list-group-flush small">
+                    <li class="list-group-item bg-light"><strong>Modificar el Contenido:</strong> Cambiar el texto de un encabezado o el atributo `src` de una imagen.</li>
+                    <li class="list-group-item bg-light"><strong>Manejar Eventos:</strong> Escuchar y reaccionar a las acciones del usuario, como un `click`, el envío de un formulario o el paso del ratón.</li>
+                    <li class="list-group-item bg-light"><strong>Añadir y Eliminar Elementos:</strong> Crear o borrar nodos HTML completos en tiempo real, fundamental en la gestión de registros.</li>
+                </ul>
+            </div>
+            
+            <div class="mt-4 p-3 border-top">
+                <h3 class="h5 text-success">Principales Aplicaciones de JavaScript</h3>
+                <ol>
+                    <li><strong>Interactividad en el Frontend:</strong> Validación de formularios, animaciones y manejo de eventos.</li>
+                    <li><strong>Desarrollo Backend (Node.js):</strong> Creación de servidores escalables y APIs REST fuera del navegador.</li>
+                    <li><strong>Desarrollo Móvil y Escritorio:</strong> Frameworks como React Native (móvil) y Electron (escritorio).</li>
+                    <li><strong>Visualización de Datos:</strong> Creación de gráficos y mapas interactivos con librerías como D3.js.</li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="recursos-externos" class="mb-5 p-4 border-top">
+            <h2 class="text-secondary">🔗 Enlaces y Recursos Complementarios (Fuentes Oficiales)</h2>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item bg-light"><a href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+                        target="_blank" class="text-decoration-none fw-bold">MDN Web Docs - Guía Completa de
+                        JavaScript</a></li>
+                <li class="list-group-item bg-light"><a href="https://www.w3schools.com/js/" target="_blank"
+                        class="text-decoration-none fw-bold">W3Schools - Tutoriales de JavaScript</a></li>
+                <li class="list-group-item bg-light"><a href="https://aws.amazon.com/es/what-is/javascript/"
+                        target="_blank" class="text-decoration-none fw-bold">AWS - ¿Qué es JavaScript?</a></li>
+            </ul>
+        </section>
+
+        <section id="ejercicios" class="mb-5 p-4 bg-info bg-opacity-10 rounded">
+            <h2 class="text-dark mb-4">🧪 Acceso al Portafolio de Ejercicios Prácticos</h2>
+            <p class="lead">Selecciona un ejercicio para ver su código, funcionalidad y aplicación de JavaScript.</p>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">1. Calculadora de Operaciones Básicas</h5>
+                            <p class="card-text">Utiliza funciones para realizar suma, resta, multiplicación, división y
+                                residuo.</p><a href="assets/ejercicios/1calculadora de operaciones básicas.html" class="btn btn-primary">Ver
+                                Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">2. Tablas de Multiplicar (Bucle `for`)</h5>
+                            <p class="card-text">Muestra las tablas del 1 al 10 en una estructura HTML.</p><a
+                                href="assets/ejercicios/2tablasdemultiplicar.html" class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">3. Tipo de Triángulo (Estructura `if`)</h5>
+                            <p class="card-text">Clasifica un triángulo (equilátero, isósceles, escaleno) según las
+                                longitudes de sus lados.</p><a href="assets/ejercicios/3tipo de triangulo según sus lados.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">4. Suma de Pares e Impares</h5>
+                            <p class="card-text">Pide números y calcula la suma separada de los valores pares y los
+                                impares.</p><a href="assets/ejercicios/4validar suma de pares e impares.html" class="btn btn-primary">Ver
+                                Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">5. Tabla de Registros Dinámicos</h5>
+                            <p class="card-text">Permite agregar, mostrar y posiblemente eliminar registros utilizando
+                                arrays y el DOM.</p><a href="assets/ejercicios/5tabla de registros.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">6. Funciones Predeterminadas (Math/Date)</h5>
+                            <p class="card-text">Demuestra el uso de funciones integradas de JS (ej. `Math.random()`,
+                                `Date()`, etc.).</p><a href="assets/ejercicios/6laboratorio de funciones predeterminadas.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">7. Adivinar el Número Secreto</h5>
+                            <p class="card-text">Juego que pide al usuario adivinar un número aleatorio generado por JS.
+                            </p><a href="assets/ejercicios/7adivinar el número secreto.html" class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">8. Convertidor Numérico</h5>
+                            <p class="card-text">Convierte números entre sistemas (ej. Binario a Decimal, Decimal a
+                                Hexadecimal) usando funciones de JS.</p><a href="assets/ejercicios/8Convertidor de sistemas numéricos.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">9. Promedio y Calificaciones</h5>
+                            <p class="card-text">Calcula el promedio de N calificaciones y muestra si el alumno aprueba
+                                o reprueba.</p><a href="assets/ejercicios/9calculadora de promedio y calificaciones.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">10. Contador de Votos</h5>
+                            <p class="card-text">Permite al usuario votar por varias opciones y muestra el conteo
+                                actualizado dinámicamente.</p><a href="assets/ejercicios/10contador de votos.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">11. Cambio de Color de Fondo</h5>
+                            <p class="card-text">Cambia el color de fondo de la página completa al color seleccionado
+                                por el usuario.</p><a href="assets/ejercicios/11cambio de color.html" class="btn btn-primary">Ver
+                                Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">12. Cambiar Propiedades del Texto</h5>
+                            <p class="card-text">Modifica el tamaño, fuente o color de un párrafo al hacer clic con
+                                JavaScript.</p><a href="assets/ejercicios/12cambiar propiedades del texto.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title">13. Ocultar y Mostrar Elemento</h5>
+                            <p class="card-text">Crea un botón que alterna la visibilidad de un elemento (como una
+                                imagen) utilizando una función.</p><a href="assets/ejercicios/13ocultar y mostrar un elemento con un botón.html"
+                                class="btn btn-primary">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-warning">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">14. Loader (Adicional)</h5>
+                            <p class="card-text">Investigación y aplicación de una animación de carga utilizando CSS y/o
+                                JS.</p>
+                            <a href="assets/ejercicios/14loader.html" class="btn btn-warning">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 shadow-sm border-warning">
+                        <div class="card-body">
+                            <h5 class="card-title text-warning">15. Fondo Animado (Adicional)</h5>
+                            <p class="card-text">Investigación y aplicación de un fondo dinámico (ej. partículas,
+                                gradientes) usando CSS y/o JS.</p>
+                            <a href="assets/ejercicios/15fondo animado.html" class="btn btn-warning">Ver Ejercicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white text-center p-4 mt-5">
+        <p class="mb-2">M.A.E.M. Jesús Alejandro López García | FACPYA-LTI - Fundamentos de Desarrollo Web</p>
+        
+        <p class="mb-0"><strong>Equipo 2:</strong></p>
+        <p class="small mb-0">
+            2003536 - AGUILAR SILVA CARLOS EDUARDO | 2057364 - ALVAREZ SANDOVAL ROBERTO ANGEL | 2124781 - GALINDO GARZA AUGUSTO SANTIAGO
+        </p>
+        <p class="small">
+            2129208 - GARZA RIVERA JESUS ELIAS | 2052283 - RAYON CERDA NICOLAS
+        </p>
+        
+        <p class="mt-2 small">
+            Fecha: 25 de octubre de 2025 | Repositorio: [Tu enlace a GitHub]
+        </p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var scrollpos = sessionStorage.getItem('scrollpos');
+            if (scrollpos) {
+                window.scrollTo(0, parseInt(scrollpos));
+                sessionStorage.removeItem('scrollpos');
+            }
+        });
+        window.addEventListener("beforeunload", function(e) {
+            sessionStorage.setItem('scrollpos', window.scrollY);
+        });
+    </script>
+</body>
+
+</html>

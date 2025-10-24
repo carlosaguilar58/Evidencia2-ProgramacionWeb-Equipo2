@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <h1>Estructura ciclo</h1>
+    <p>Pon un numero y te muestro la tabla de multiplicar de ese numero</p>
+
+    <form>
+        <input id="txtnumber" type="number" name="txtnumber">
+        <button type="button" onclick="tabla()">MOSTRAR TABLA</button>
+        <div id="resultado">
+            <!--este div es para que se muestre el resultado gracias al id-->
+        </div>
+    </form>
+
+    <script type="text/JavaScript">
+        function tabla() {
+            let num = parseInt(document.getElementById('txtnumber').value); //convertimos el txtnumber en entero
+            let lista = '<table border=1>'; //creamos la tabla
+            let resultado;
+
+            for (let i = 0; i <= 10; i++) {
+                //creamos el bucle continua si i es menor o igual 10
+                //i aumenta 1 por 1 cada vez que se ejecute el ciclo
+
+                resultado = num * i; //la operacion el numero que me mando el usuario por i
+                lista += '<tr><td>' + num + ' X ' + i + ' = ' + resultado + '</tr></td>';
+                //en la tabla agregamos los resultados agregamos el numero que mando el usuario
+                //despues el por cuanto se multiplico que eso lo indica i siendo sumado por 1 cada vez que se repetia el ciclo
+                //y despues el resultado de dicha operacion
+
+            }
+
+            lista += '</table>'; //cerramos tabla
+            document.getElementById('resultado').innerHTML = lista; //el inner.HTML ayuda a que agregemos etiquetas de HTML al JS
+        }
+        
+    </script>
+</body>
+</html>

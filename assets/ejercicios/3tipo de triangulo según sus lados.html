@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Tipos de triangulos</title>
+</head>
+
+<body>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <form action="">
+
+        <h3>Tipos de triangulos, dime cuanto valen los 3 lados y te dire que triangulo es </h3>
+        <h4>Estos resulatos tambien se imprimen en la consola como lo indica la actividad</h4>
+        <h4>Un atajo para ver la consola es: Ctrl + shift + j</h4>
+        <label for="txtlado1">Lado 1</label>
+        <input id="txtlado1" type="number" name="txtlado1">
+
+        <br>
+
+        <label for="txtlado2">Lado 2</label>
+        <input id="txtlado2" type="number" name="txtlado2">
+
+        <br>
+
+        <label for="txtlado3">Lado 3</label>
+        <input id="txtlado3" type="number" name="txtlado3">
+
+        <br>
+
+        <button type="button" onclick="triangulo()">MOSTRAR</button>
+
+
+        <script type="text/JavaScript">
+            function triangulo() {
+                let num1 = parseFloat(document.getElementById('txtlado1').value);
+                let num2 = parseFloat(document.getElementById('txtlado2').value);
+                let num3 = parseFloat(document.getElementById('txtlado3').value);
+                //declaramos los 3 numeros que nos dio el usuario
+                
+
+                if (num1 === num2 && num2=== num3) { //todas son iguales :,(
+                    console.log('Triangulo equilatero: Todos sus lados son iguales');
+                    //console.log sirve para mostrar el resultado en la consola no es visible en la pagina
+                    alert('Triangulo equilatero: Todos sus lados son iguales');
+                    //mientras que alert si es visible y muestra a la vez que console el resultado
+
+                }
+
+                else if (num1 === num2 || num1 ===num3 || num2 === num3) { //dos iguales una diferente
+                    console.log('Triangulo isosceles: Dos lados iguales y uno diferente');
+                    alert('Triangulo isosceles: Dos lados iguales y uno diferente');
+                }
+
+                else { //todas son diferentes 
+                    console.log('Triangulo escaleno: Todos sus lados son diferentes');
+                    alert('Triangulo escaleno: Todos sus lados son diferentes');
+                }
+
+
+            }
+        </script>
+    </form>
+</body>
+
+</html>

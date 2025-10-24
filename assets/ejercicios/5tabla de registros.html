@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Simular un dataGridView</title>
+</head>
+
+<body>
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <form action="">
+        <h1>dataGridView</h1>
+        <p>Pon una id y despues te pediremos nombres segun las id's que pusiste</p>
+        <p>Ejemplo pusiste 3, te pedimos 3 nombres y hacemos una tabla tipo BD</p>
+        <div id="area"></div>
+        <button type="button" onclick="data()">EMPEZAR</button>
+
+        <script type="text/JavaScript">
+            function data() {
+                let nombre;
+                let numeroRegistros = prompt('Ingrese la id: '); //Prompt lo que hace es abrir una ventaja de emergencia
+                //para pedir la id
+                let grid = '<table border=1>'; //Grid es una cadena de texto que en este caso va contener toda
+                    //una tabla de HTML
+                    grid += '<tr>';
+                        //El += significa "agrega esto al final de lo que ya tenía", no borra lo anterior.
+                    grid += '<th>Id</th>';
+                    grid += '<th>Nombre</th>';
+                    grid += '<th></th>';
+                    grid += '<th></th>';
+                    grid += '</tr>';
+
+                for (let i = 1; i <= numeroRegistros; i++) {
+                    //Este ciclo se repetirá una vez por cada ID que pidió el usuario.
+                    nombre = prompt('Ingrese los nombres: ');
+                    //En cada repetición, se pregunta por un nombre con prompt()
+
+                    grid += '<tr>';
+                    grid += '<td>' + i + '</td>';
+                    grid += '<td>' + nombre + '</td>';
+                    //' + i + ' y ' + nombre + ' insertan los valores dentro del HTML.
+                    grid += '<td><button type="button">Editar</button></td>';
+                    grid += '<td><button type="button">Eliminar</button></td>';
+                    grid += '</tr>';
+                }
+
+                grid += '</table>';
+                document.getElementById('area').innerHTML = grid;
+                //Busca el <div id="area"></div> en tu HTML.
+                //Inserta dentro todo el contenido del string grid
+                //Es decir, convierte esa cadena en una tabla real visible en la página.
+            }
+        </script>
+    </form>
+</body>
+
+</html>

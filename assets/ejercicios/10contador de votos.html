@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contador de Votos</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 8px 12px;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2>Programa de Votación</h2>
+
+  <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+  <button onclick="iniciarVotacion()">Iniciar Votación</button>
+  <p id="resultado"></p>
+
+  <script>
+    function iniciarVotacion() {
+      let votos = { Hiram: 0, Ángel: 0, Omar: 0, Nulos: 0 };
+      let voto;
+
+      while (true) {
+        voto = prompt("Vota por un candidato:\n1. Hiram\n2. Ángel\n3. Omar\n(0 para finalizar)");
+        if (voto === null) return;
+        voto = parseInt(voto);
+
+        if (voto === 0) break;
+        else if (voto === 1) votos.Hiram++;
+        else if (voto === 2) votos.Ángel++;
+        else if (voto === 3) votos.Omar++;
+        else votos.Nulos++;
+      }
+
+      let total = votos.Hiram + votos.Ángel + votos.Omar + votos.Nulos;
+
+      let maxVotos = Math.max(votos.Hiram, votos.Ángel, votos.Omar);
+      let ganadores = [];
+
+      for (let candidato in votos) {
+        if (candidato !== "Nulos" && votos[candidato] === maxVotos) {
+          ganadores.push(candidato);
+        }
+      }
+
+      if (ganadores.length > 1) {
+        alert(`Empate entre los candidatos: ${ganadores.join(" y ")}. Se realizará un voto adicional.`);
+        let votoExtra = parseInt(prompt("Voto adicional para desempate:\n1. Hiram\n2. Ángel\n3. Omar"));
+        if (votoExtra === 1) votos.Hiram++;
+        else if (votoExtra === 2) votos.Ángel++;
+        else if (votoExtra === 3) votos.Omar++;
+      }
+
+      let ganadorFinal = Object.keys(votos).reduce((a, b) => (votos[a] > votos[b] ? a : b));
+      let porcentaje = ((votos[ganadorFinal] / total) * 100).toFixed(2);
+
+      document.getElementById("resultado").innerHTML =
+        `Total de votos: ${total}<br>
+        Hiram: ${votos.Hiram}<br>
+        Ángel: ${votos.Ángel}<br>
+        Omar: ${votos.Omar}<br>
+        Nulos: ${votos.Nulos}<br><br>
+        Ganador: <b>${ganadorFinal}</b><br>
+        Porcentaje de aceptación: <b>${porcentaje}%</b>`;
+    }
+  </script>
+</body>
+
+</html>

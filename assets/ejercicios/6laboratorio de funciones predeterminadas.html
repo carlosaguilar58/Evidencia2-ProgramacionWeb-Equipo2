@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>Funciones</title>
+</head>
+
+<body>
+    <h1>Formulario de Funciones de JavaScript</h1>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <h3>Solo veremos el nombre, definicion y ejemplo.</h3>
+
+    <div id="abs"></div>
+    <div id="ceil"></div>
+    <div id="random"></div>
+    <div id="max"></div>
+    <div id="min"></div>
+    <div id="isNaN"></div>
+    <div id="toFixed"></div>
+    <div id="Date"></div>
+    <div id="length"></div>
+    <div id="UpperCase"></div>
+    <div id="LowerCase"></div>
+    <div id="floor"></div>
+    <script type="text/JavaScript">
+        let texto = "Hola Mundo"
+            document.getElementById("abs").innerHTML =
+            "<h3>Math.abs()</h3>" +
+            "<p><b>Función abs:</b> El cual convierte cualquier número negativo a positivo.</p>"+
+            "<h3>Ejemplo</h3>"+
+            "<p>El valor absoluto del numero -10 es "+Math.abs(-10);
+
+            document.getElementById("ceil").innerHTML = 
+            "<h3>Math.ceil()</h3>"+
+            "<p><b>Funcion ceil:</b> Redondea hacia arriba, ejemplo el 0.1 se convierte en "
+            + Math.ceil(0.1) + ", el cual logicamente se redondea a 0, pero se fue a 1, pongan esto en NEXUS y SIASE</p> <hr>";
+
+            document.getElementById("random").innerHTML = 
+            "<h3>Math.random()</h3>"+
+            "<p><b>Funcion random:</b> Genera numeros de manera aleatoria entre 0 y 1 ejemplo "
+            + Math.random() + ", Nos genero un numero de manera aleatoria siendo decimal pero nunca llega ser 1</p> <hr>";
+
+            document.getElementById("max").innerHTML = 
+            "<h3>Math.max()</h3>"+
+            "<p><b>Funcion max:</b> Nos devuelve el numero mas grande de una lista, ejemplo [5, 6, 7, 9] -> "
+            + Math.max(5, 6, 7, 9) + ", el cual nos devolvera el numero 9 como el numero grande de la lista o el maximo</p> <hr>";
+
+            document.getElementById("min").innerHTML = 
+            "<h3>Math.min()</h3>"+
+            "<p><b>Funcion min:</b> Nos devuelve el numero mas pequeño de una lista, ejemplo [5, 6, 7, 9] -> "
+            + Math.min(5, 6, 7, 9) + ", el cual nos devolver el numero 5 como el numero menor de la lista o el minimo</p> <hr>";
+
+            document.getElementById("isNaN").innerHTML = 
+            "<h3>Number.isNaN()</h3>"+
+            "<p><b>Función Number.isNaN:</b> Verifica si un valor es el valor especial 'Not a Number' (NaN), es decir, si NO ES UN NÚMERO VÁLIDO.<br><br>" +
+            Number.isNaN(45) + " → Ponemos 45 y nos da <b>false</b> ya que es un número normal, no hay nada inválido.<br><br>" +
+            Number.isNaN('hola') + " → Ponemos 'hola' y también nos da <b>false</b> porque, aunque no es número, no es exactamente NaN (es texto).<br><br>" +
+            Number.isNaN(0 / 0) + " → Aquí hacemos 0/0, lo que genera un NaN, por eso devuelve <b>true</b>, indicando un valor inválido matemáticamente.<br><br>" +
+            "Por ende, <b>Number.isNaN()</b> solo devuelve true si el valor es exactamente NaN.</p> <hr>";
+
+            document.getElementById("toFixed").innerHTML = 
+            "<h3>toFixed()</h3>"+
+            "<p><b>Funcion toFixed:</b> Redondea un numero decimal a un numero entero cercano Ejemplo -> " +
+            9.6.toFixed(0) + " -> Puse 9.6 y aparece 10 ya que redondeo a lo mas cerca <br> " +
+            "Nota, la sintaxis es numeroDecimal.toFixed(cantidad de numeros decirmales a mostrar) <br>" +
+            "En mi caso <b>9.6.toFixed(0)</b> nos mostrara un 10 sin decimales pero si ponemos (1) nos mostrara " + 9.6.toFixed(1) +
+            " lo mantiene decimal y al poner (2) nos muestra " + 9.6.toFixed(2) + " agregando una decimal mas</p><hr>";
+
+            document.getElementById("Date").innerHTML = 
+            "<h3>Date()</h3>"+
+            "<p><b>Funcion Date:</b> Nos devuelve una fecha ya sea actual o indicandole cual, tambien incluye horas, minutos y segundos <br> " +
+            new Date(2025, 09, 21, 10, 31, 0).toLocaleString() + ", Aqui indicando el dia de hoy 21/10/25 a las 10:31 con 0 segundos <br>" +
+            "La sintaxis que use fue <b>new Date(2025, 09, 21, 10, 10, 31, 0).toLocaleString()</b> para que se vea en el formato de 21/10 <br>" +
+            "Por que el new?, sin el new y solo pongo Date() -> " + Date() + " Se ve feo y si pongo Date(2025, 09, 21) ignora los numeros y devuelve lo anterior</p> <hr>";
+
+            document.getElementById("length").innerHTML =
+            "<h3>String.length</h3>"+
+            "<p><b>Propiedad length:</b> Nos devuelve la cantidad de caracteres que tiene una cadena Ejemplo -> " +
+            texto.length + " puse texto.length y aparece la cantidad de caracteres que tiene hola mundo <br>" +
+            "para esto debes tener definida la variable usando <b>let texto ='hola mundo'</b> para que pueda funcionar</p><hr>";
+
+            document.getElementById("UpperCase").innerHTML =
+            "<h3>String.toUpperCase()</h3>"+
+            "<p><b>Propiedad toUpperCase:</b> Convierte todos los caracteres en mayuscular Ejemplo -> " +
+            texto.toUpperCase() + " nos devuelve el Hola Mundo en mayusculas <br>" +
+            "para esto debes tener definida la variable usando <b>let texto ='hola mundo'</b> para que pueda funcionar</p><hr>";
+
+            document.getElementById("LowerCase").innerHTML =
+            "<h3>String.toLowerCase()</h3>"+
+            "<p><b>Propiedad toLowerCase:</b> Convierte todos los caracteres en minusculas Ejemplo -> " +
+            texto.toLowerCase() + " nos devuelve el Hola Mundo en minusculas <br>" +
+            "para esto debes tener definida la variable usando <b>let texto ='hola mundo'</b> para que pueda funcionar</p><hr>";
+
+             document.getElementById("floor").innerHTML = 
+            "<h3>Math.floor()</h3>"+
+            "<p><b>Funcion floor:</b> Redondea hacia abajo, ejemplo el 0.1 se convierte en "
+            + Math.floor(0.1) + ", lo contrario a ceil que redondea a 1, lo redondea a 0 como diferencia</p> <hr>";
+    </script>
+</body>
+
+</html>

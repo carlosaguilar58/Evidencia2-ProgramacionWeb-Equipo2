@@ -1,0 +1,34 @@
+<!--Holand mundo-->
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiar fondo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3>Cambiar fondo de pantalla</h3>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <h4>Escoja un color a su gusto :D</h4>
+    <form action="">
+        <input id="txtcolorfondo" type="color" name="txtcolorfondo"> <!--el 'boton' de los colores :D-->
+        <button type="button" onclick="fondo()">Cambiar color de fondo de pantalla</button>
+        <!--el boton para realizar dicho cambio-->
+    </form>
+
+    <script type="text/JavaScript">
+        function fondo() {
+            let colorfondo = document.getElementById('txtcolorfondo').value; //declaramos la funcion con la id del input
+            document.body.style.backgroundColor = colorfondo; //y aqui le agregamos el diseño con la variable que definimos arriba
+            //cambiando el fondo de pantalla con el color que me indiques
+        }
+    </script>
+</body>
+
+</html>

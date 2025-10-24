@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora de Promedio</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    button {
+      padding: 8px 12px;
+    }
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2>Calculadora de Promedio y Calificaciones</h2>
+
+  <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+  <button onclick="calcularPromedio()">Iniciar</button>
+  <p id="resultado"></p>
+
+  <script>
+    function calcularPromedio() {
+      let calificaciones = [];
+      let entrada;
+
+      while (true) {
+        entrada = prompt("Ingresa una calificación (deja vacío o cancela para terminar):");
+        if (entrada === null || entrada === "") break;
+        let valor = parseFloat(entrada);
+        if (!isNaN(valor) && valor >= 0 && valor <= 100) {
+          calificaciones.push(valor);
+        } else {
+          alert("Por favor ingresa un número válido entre 0 y 100.");
+        }
+      }
+
+      if (calificaciones.length === 0) {
+        document.getElementById("resultado").textContent = "No se ingresaron calificaciones.";
+        return;
+      }
+
+      let suma = 0;
+      for (let c of calificaciones) suma += c;
+      let promedio = suma / calificaciones.length;
+
+      let mensaje = `Promedio: ${promedio.toFixed(2)} — `;
+      mensaje += promedio >= 70 ? "El estudiante APROBÓ." : "El estudiante REPROBÓ.";
+
+      document.getElementById("resultado").textContent = mensaje;
+    }
+  </script>
+</body>
+
+</html>

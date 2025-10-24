@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <title>while</title>
+</head>
+
+<body>
+    <h1>ciclo while</h1>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <h3>Para salir del ciclo ponga 0 y vera el resultado :O</h3>
+    <p>Sumatoria de numeros impares y pares</p>
+    <form action="">
+        <div id="area"></div>
+        <button type="button" onclick="serie()">EMPEZAR</button>
+
+        <script type="text/JavaScript">
+            /*function serie() {
+                let i=100;
+                let texto;
+                while(i !=0) {
+                    texto += i + '<br>';
+                    i--;
+                }
+
+                document.getElementById('area').innerHTML = texto;
+            }*/
+
+            function serie() {
+                let bandera = 0; //esta apagada
+                let sumaPar = 0;
+                let numero;
+                let sumaImpar = 0;
+                while (bandera == 0) { //esta bandera es un ciclo que se repetira si bandera = 0
+                    numero = parseInt(prompt('Ingrese un numero: '));
+
+                    if (numero % 2 ==0) {
+                        //el numero es par;
+                        sumaPar = sumaPar + numero;
+                    }
+                    else {
+                        // es par
+                        sumaImpar = sumaImpar + numero;
+                    }
+
+                     if (numero == 0) {
+                        bandera = 1; //Encendida, termina
+                    }
+                    else {
+                        bandera = 0; //Apagada, continua
+                    }
+                    
+                }
+                document.getElementById('area').innerText = ('la suma de nuemros pares es ' +sumaPar+ ' la suma de numero impares son '+sumaImpar);
+                //mensaje final con los resultados
+            }
+
+        </script>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades texto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3>Cambiar el tamaño del texto</h3>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <p id="parrafo" onclick="tamano()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ipsum labore
+        doloremque nam soluta animi repellendus, minus cupiditate vero harum totam amet adipisci dolores quae voluptatem
+        beatae sed praesentium. Incidunt!</p>
+
+    <h4>Has click sobre el Lorem y cambiara de tamaño a grande y despues a la normalidad</h4>
+
+    <script type="text/JavaScript">
+        let grande = false; //variable global que cambiara de estado en cada click
+        function tamano() {
+            let size = document.getElementById('parrafo'); //agarro la id de parrafo
+
+            if(!grande) {
+            size.style.fontSize = "30px"; //aumenta el tamaño
+            grande = true;
+            }
+            else {
+            size.style.fontSize = "16px"; //disminuye el tamaño
+            grande = false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocultar y mostrar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+
+<body>
+    <h3>ocultar y mostrar una imagen a un solo click :O</h3>
+
+    <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+    <form action="">
+        <button type="button" onclick="ocultar()">Ocultar y mostrar</button> <!--Boton para la funcion-->
+        <br>
+        <img id="imagen" src="https://i.pinimg.com/1200x/5d/4c/17/5d4c17fef67d2fa3e9b6e1a845b51dc9.jpg"
+            alt="Imagen bonita">
+    </form>
+
+    <script type="text/JavaScript">
+        let visible = false; //Variable global para cambiar el estado 
+        function ocultar() {
+            let img = document.getElementById('imagen'); //agarramos la id de la imagen
+            
+            if(!visible) {
+                img.style.display = "none"; //aqui se oculta la imagen
+            }
+            else {
+                img.style.display = "block"; //aqui se muuestra la imagen
+            }
+            visible = !visible; //esto es para que visible cambie de estado cada que hagamos click al boton
+            // y la imagen se pueda ocultar y mostrar mas de una vez
+        }
+    </script>
+
+</body>
+
+</html>

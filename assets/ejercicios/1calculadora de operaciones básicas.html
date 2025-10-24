@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es" translate="no">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de operaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+    <script>
+        function Operaciones() {
+            let num1 = parseInt(document.getElementById('txtnumero1').value); //agarro el id del primer numero
+            let num2 = parseInt(document.getElementById('txtnumero2').value); //agarro el segundo id del segundo numero
+            let operacion = parseInt(document.getElementById('selectoperaciones').value);
+            //agarro el id de las opciones de las operaciones
+
+            switch (operacion) {
+                case 1: //suma
+                    resultado = num1 + num2;
+                    break;
+                case 2: //resta
+                    resultado = num1 - num2;
+                    break;
+                case 3: //multiplicacion
+                    resultado = num1 * num2;
+                    break;
+                case 4: //division
+                    resultado = num1 / num2;
+                    break;
+                case 5: //residuo
+                    resultado = num1 % num2;
+                    break;
+
+                default:
+                    resultado = 0
+                    //si el usuario no agrega numero se le muestra el resultado de 0
+                    break;
+
+            }
+            alert('el resultado de ' + num1 + ' y ' + num2 + ' es ' + resultado);
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <main class="container border p-4 m5-5 rounded">
+        <h1>Calculadora de solo dos numeros</h1>
+
+        <a href="../../index.html" class="btn btn-secondary mb-4">← Volver al Índice</a>
+
+        <p>Calculadora con distintas operaciones</p>
+
+        <form action="" autocomplete="off">
+            <section class="row">
+                <div class="col-3">
+                    <label for="txtnumero1">Numero 1</label>
+                    <input id="txtnumero1" type="number" name="txtnumero1" placeholder="Obligatorio"
+                        class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="txtnumero2">Numero 2</label>
+                    <input id="txtnumero2" type="number" name="txtnumero2" placeholder="Obligatorio"
+                        class="form-control">
+                </div>
+                <div class="col-3">
+                    <select name="selectoperaciones" id="selectoperaciones">
+                        <option value="0">[Seleccione] </option>
+                        <option value="1">Suma</option>
+                        <option value="2">Resta</option>
+                        <option value="3">Multiplicacion</option>
+                        <option value="4">Division</option>
+                        <option value="5">Residuo</option>
+                    </select>
+                </div>
+
+                <div class="col-3">
+                    <button for="btn btn-success" type="button" onclick="Operaciones()">ACEPTAR</button>
+                    <!--Poner dentro del boton la funcion para que sea llamada-->
+                    <input type="reset" class="btn btn-danger" value="LIMPIAR">
+                </div>
+            </section>
+        </form>
+    </main>
+</body>
+
+</html>
